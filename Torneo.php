@@ -52,7 +52,7 @@ class Torneo {
             $partidoCorrecto = true;
             switch ($tipoPartido) {
                 case "basquet":
-                    $partido = new PartidoBasquet(1, $fecha, $OBJEquipo1, 0, $OBJEquipo2, 0);
+                    $partido = new PartidoBasquet(1, $fecha, $OBJEquipo1, 0, $OBJEquipo2, 0, 0);
                     break;
                 case "futbol":
                     $partido = new PartidoFutbol(2, $fecha, $OBJEquipo1, 0, $OBJEquipo2, 0);

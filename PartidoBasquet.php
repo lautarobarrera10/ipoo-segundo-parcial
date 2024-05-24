@@ -6,10 +6,10 @@ class PartidoBasquet extends Partido {
     private $coefPenalizacion;
     private $cantidadInfracciones;
 
-    public function __construct($idpartido, $fecha,$objEquipo1,$cantGolesE1,$objEquipo2,$cantGolesE2){
+    public function __construct($idpartido, $fecha,$objEquipo1,$cantGolesE1,$objEquipo2,$cantGolesE2, int $infracciones){
         parent::__construct($idpartido, $fecha,$objEquipo1,$cantGolesE1,$objEquipo2,$cantGolesE2);
         $this->coefPenalizacion = 0.75;
-        $this->cantidadInfracciones = 0;
+        $this->cantidadInfracciones = $infracciones;
     }
 
     public function getCoefPenalizacion(){
