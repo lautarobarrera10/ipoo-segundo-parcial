@@ -96,4 +96,15 @@ class Torneo {
 
         return $colObjGanadores;
     }
+
+    public function calcularPremioPartido($OBJPartido){
+        //Implementar el método calcularPremioPartido($OBJPartido) que debe retornar un arreglo asociativo donde una de sus claves es ‘equipoGanador’  y contiene la referencia al equipo ganador; y la otra clave es ‘premioPartido’ que contiene el valor obtenido del coeficiente del Partido por el importe configurado para el torneo. (premioPartido = Coef_partido * ImportePremio)
+        $ganador = $OBJPartido->darEquipoGanador();
+        $premioPartido = $OBJPartido->coeficientePartido() * $this->getImportePremio();
+        $premio = [
+            "equipoGanador" => $ganador,
+            "premioPartido" => $premioPartido
+        ];
+        return $premio;
+    }
 }
