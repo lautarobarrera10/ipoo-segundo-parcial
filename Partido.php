@@ -114,6 +114,15 @@ class Partido{
         }
         return $equipoGanador;
     }
+
+    public function coeficientePartido(){
+        // Implementar el método coeficientePartido() en la clase Partido el cual retorna el valor obtenido por el coeficiente base, multiplicado por la cantidad de goles y la cantidad de jugadores. Redefinir dicho método según corresponda.
+        $coefBase = $this->getCoefBase();
+        $cantidadGoles = $this->getCantGolesE1() + $this->getCantGolesE2();
+        $cantidadJugadores = $this->getObjEquipo1()->getCantJugadores() + $this->getObjEquipo2()->getCantJugadores();
+
+        return $coefBase * $cantidadGoles * $cantidadJugadores;
+    }
 }
 
 

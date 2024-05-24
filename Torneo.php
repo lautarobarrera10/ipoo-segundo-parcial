@@ -69,4 +69,31 @@ class Torneo {
 
         return $partido;
     }
+
+    public function darGanadores($deporte) {
+        // Implementar el método darGanadores($deporte) en la clase Torneo que recibe por parámetro si se trata de un partido de fútbol o de básquetbol y en  base  al parámetro busca entre esos partidos los equipos ganadores ( equipo con mayor cantidad de goles). El método retorna una colección con los objetos de los equipos encontrados.
+        $colObjGanadores = [];
+        $colPartidos = $this->getColPartidos();
+
+        switch ($deporte) {
+            case "basquet":
+                foreach ($colPartidos as $partido){
+                    if ($partido instanceof PartidoBasquet){
+                        $equipoGanador = $partido->darEquipoGanador();
+                        array_push($colObjGanadores, $equipoGanador);
+                    }
+                }
+                break;
+            case "futbol":
+                foreach ($colPartidos as $partido){
+                    if ($partido instanceof PartidoFutbol){
+                        $equipoGanador = $partido->darEquipoGanador();
+                        array_push($colObjGanadores, $equipoGanador);
+                    }
+                }
+                break;
+        }
+
+        return $colObjGanadores;
+    }
 }
